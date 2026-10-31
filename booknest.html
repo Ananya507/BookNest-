@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">
+  <svg class="logo-icon" viewBox="0 0 48 48"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-hidden="true">
+  <path d="M24 13 C18 8 10 8 4 11 V35
+           C11 32 18 33 24 38 Z"
+        fill="#B18A51"/>
+  <path d="M24 13 C30 8 38 8 44 11 V35
+           C37 32 30 33 24 38 Z"
+        fill="#B18A51"/>
+  <path d="M24 13 V38" stroke="#244C3B"
+        stroke-width="2" fill="none"/>
+</svg>
+  <h1>BookNest</h1>
+  
+  </div>
+ <p class="tagline">Books, ideas, and imagination.</p>
+  <nav aria-label="Main navigation">
+  <ul>
+    <li><a href="#discover">Discover</a></li>
+    <li><a href="#library">My Library</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+</header>
+<main>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Find Your Next Favorite Book</h2>
+
+        <p>
+            Discover new worlds, fresh perspectives,
+            and stories that stay with you.
+        </p>
+
+        <form id="search-form">
+            <label for="search-input">Search books</label>
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search for books, authors, or genres..."
+            >
+            <button type="submit" id="search-button">Search</button>
+        </form>
+    </div>
+</section>
+
+<section class="featured-books">
+  <h2>Featured Books</h2>
+  <article class="book-card" data-category="fiction">
+    <img
+  src="book1.png"
+  alt="Cover of The Great Gatsby by F. Scott Fitzgerald"
+>
+    <h3 class="book-title">The Great Gatsby</h3>
+
+    <p>Author: F. Scott Fitzgerald</p>
+     <button>Preview</button>
+    <button
+    class="read-button"
+    data-book-url="https://www.gutenberg.org/ebooks/64317"
+>
+    Read Now
+</button>
+  </article>
+  <article class="book-card" data-category="fiction">
+  <img
+    src="book17.png"
+    alt="Cover of To Kill a Mockingbird by Harper Lee"
+  >
+  <h3 class="book-title">To Kill a Mockingbird</h3>
+  <p>Author: Harper Lee</p>
+  <button>Preview</button>
+  <button
+    class="read-button"
+>
+    Read Now
+</button>
+</article>
+
+<article class="book-card" data-category="fiction">
+  <img
+    src="book18.png"
+    alt="Cover of 1984 by George Orwell"
+  >
+  <h3 class="book-title">1984</h3>
+  <p>Author: George Orwell</p>
+   <button>Preview</button>
+  <button
+    class="read-button"
+    data-book-url="https://www.planetebook.com/free-ebooks/1984.pdf"
+>
+    Read Now
+</button>
+</article>
+
+<article class="book-card" data-category="fiction">
+  <img
+    src="book19.png"
+    alt="Cover of Pride and Prejudice by Jane Austen"
+  >
+  <h3 class="book-title">Pride and Prejudice</h3>
+  <p>Author: Jane Austen</p>
+   <button>Preview</button>
+ <button
+    class="read-button"
+    data-book-url="https://www.gutenberg.org/ebooks/1342"
+>
+    Read Now
+</button>
+</article>
+
+<article class="book-card" data-category="fiction">
+  <img
+    src="book20.png"
+    alt="Cover of The Catcher in the Rye by J.D. Salinger"
+  >
+  <h3 class="book-title">The Catcher in the Rye</h3>
+  <p>Author: J.D. Salinger</p>
+  <button>Preview</button>
+  <button
+    class="read-button"
+>
+    Read Now
+</button>
+</article>
+</section>
+<section class="explore-library" id="library">
+    <h2>Explore the library</h2>
+    
+<div class="category-filters" aria-label="Filter books by category">
+  <button type="button" class="category-button active" data-filter="all">
+    All Books
+  </button>
+  <button type="button" class="category-button" data-filter="fiction">
+    Fiction
+  </button>
+  <button type="button" class="category-button" data-filter="personal-growth">
+    Personal Growth
+  </button>
+  <button type="button" class="category-button" data-filter="productivity">
+    Productivity
+  </button>
+  <button type="button" class="category-button" data-filter="finance">
+    Finance
+  </button>
+  <button type="button" id="clear-filters">
+    Clear Filters
+</button>
+</div>
+     
+    <article class="book-card" data-category="personal-growth">
+      <img src="book3.png" alt="Cover of Ikigai by Héctor García">
+      <h3 class="book-title">Ikigai</h3>
+      <p>Author: Héctor García</p>
+      <button >Read Now</button>
+    </article>
+    <article class="book-card" data-category="personal-growth">
+      <img src="book4.png" alt="Cover of The Subtle Art of Not Giving a F*ck by Mark Manson">
+      <h3 class="book-title">The Subtle Art of Not Giving a F*ck</h3>
+      <p>Author: Mark Manson</p>
+      <button >Read Now</button>
+    </article>
+    <article class="book-card" data-category="personal-growth">
+      <img src="book2.png" alt="Cover of Atomic Habits by James Clear">
+      <h3 class="book-title">Atomic Habits</h3>
+      <p>Author: James Clear</p>
+      <button >Read Now</button>
+    </article>
+    <article class="book-card" data-category="finance">
+  <img src="book5.png" alt="Cover of The Psychology of Money by Morgan Housel">
+  <h3 class="book-title">The Psychology of Money</h3>
+  <p>Author: Morgan Housel</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="productivity">
+  <img src="book6.png" alt="Cover of Deep Work by Cal Newport">
+  <h3 class="book-title">Deep Work</h3>
+  <p>Author: Cal Newport</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="psychology">
+  <img src="book7.png" alt="Cover of Thinking, Fast and Slow by Daniel Kahneman">
+  <h3 class="book-title">Thinking, Fast and Slow</h3>
+  <p>Author: Daniel Kahneman</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="history">
+  <img src="book8.png" alt="Cover of Sapiens by Yuval Noah Harari">
+  <h3 class="book-title">Sapiens</h3>
+  <p>Author: Yuval Noah Harari</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="fiction">
+  <img src="book9.png" alt="Cover of The Alchemist by Paulo Coelho">
+  <h3 class="book-title">The Alchemist</h3>
+  <p>Author: Paulo Coelho</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="productivity">
+  <img src="book10.png" alt="Cover of Essentialism by Greg McKeown">
+  <h3 class="book-title">Essentialism</h3>
+  <p>Author: Greg McKeown</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="philosophy">
+  <img src="book11.png" alt="Cover of Man's Search for Meaning by Viktor E. Frankl">
+  <h3 class="book-title">Man's Search for Meaning</h3>
+  <p>Author: Viktor E. Frankl</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="personal-growth">
+  <img src="book12.png" alt="Cover of Can't Hurt Me by David Goggins">
+  <h3 class="book-title">Can't Hurt Me</h3>
+  <p>Author: David Goggins</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="creativity">
+  <img src="book13.png" alt="Cover of Show Your Work! by Austin Kleon">
+  <h3 class="book-title">Show Your Work!</h3>
+  <p>Author: Austin Kleon</p>
+  <button>Read Now</button>
+</article>
+<article class="book-card" data-category="business">
+  <img src="book14.png" alt="Cover of Start with Why by Simon Sinek">
+  <h3 class="book-title">Start with Why</h3>
+  <p>Author: Simon Sinek</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="personal-growth">
+  <img src="book15.png" alt="Cover of Grit by Angela Duckworth">
+  <h3 class="book-title">Grit</h3>
+  <p>Author: Angela Duckworth</p>
+  <button>Read Now</button>
+</article>
+
+<article class="book-card" data-category="personal-growth">
+  <img src="book16.png" alt="Cover of The 7 Habits of Highly Effective People by Stephen R. Covey">
+  <h3 class="book-title">The 7 Habits of Highly Effective People</h3>
+  <p>Author: Stephen R. Covey</p>
+  <button>Read Now</button>
+</article>
+<article class="book-card" data-category="fiction">
+    <img
+  src="book1.png"
+  alt="Cover of The Great Gatsby by F. Scott Fitzgerald"
+>
+    <h3 class="book-title">The Great Gatsby</h3>
+    <p>Author: F. Scott Fitzgerald</p>
+    <button >Preview</button>
+  </article>
+  <article class="book-card" data-category="fiction">
+  <img
+    src="book17.png"
+    alt="Cover of To Kill a Mockingbird by Harper Lee"
+  >
+  <h3 class="book-title">To Kill a Mockingbird</h3>
+  <p>Author: Harper Lee</p>
+  <button>Preview</button>
+</article>
+
+<article class="book-card" data-category="fiction">
+  <img
+    src="book18.png"
+    alt="Cover of 1984 by George Orwell"
+  >
+  <h3 class="book-title">1984</h3>
+  <p>Author: George Orwell</p>
+  <button>Preview</button>
+</article>
+
+<article class="book-card" data-category="fiction">
+  <img
+    src="book19.png"
+    alt="Cover of Pride and Prejudice by Jane Austen"
+  >
+  <h3 class="book-title">Pride and Prejudice</h3>
+  <p>Author: Jane Austen</p>
+  <button>Preview</button>
+</article>
+
+<article class="book-card" data-category="fiction">
+  <img
+    src="book20.png"
+    alt="Cover of The Catcher in the Rye by J.D. Salinger"
+  >
+  <h3 class="book-title">The Catcher in the Rye</h3>
+  <p>Author: J.D. Salinger</p>
+  <button>Preview</button>
+</article>
+  </section>
+  <dialog id="book-preview">
+    <button type="button" id="close-preview" aria-label="Close preview">
+        &times;
+    </button>
+
+    <h2 id="preview-title">Book title</h2>
+    <p id="preview-author">Author</p>
+    <p id="preview-description">
+        Discover this book on BookNest.
+    </p>
+</dialog>
+  </main>
+
+<footer id="about">
+  <p>&copy; 2026 BookNest. All rights reserved.</p>
+  <p>A little more room for imagination.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
