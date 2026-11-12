@@ -1,5 +1,6 @@
 
 
+
 /* =========================================
    BOOKNEST — COZY EDITORIAL BOOKSTORE
 ========================================= */
@@ -318,6 +319,7 @@ nav a:hover {
 /* 9. BOOK CARDS */
 
 .book-card {
+    position: relative;
     min-width: 0;
 
     display: flex;
@@ -395,7 +397,18 @@ nav a:hover {
     line-height: 1.7;
 }
 
-/* Book buttons */
+/* Preview and Read Now buttons */
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+}
+
+.button-group button {
+    flex: 1;
+}
 
 .book-card button {
     margin-top: auto;
@@ -421,6 +434,16 @@ nav a:hover {
     background: var(--color-gold);
     border-color: var(--color-gold);
     transform: translateY(-2px);
+}
+
+/* Database Books Grid */
+
+#database-books {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
 }
 
 /* 10. NO RESULTS MESSAGE */
@@ -516,6 +539,10 @@ input:focus-visible {
     .book-card {
         padding: 16px;
     }
+
+    #database-books {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 /* 15. MOBILE */
@@ -525,6 +552,10 @@ input:focus-visible {
         flex-direction: column;
         align-items: flex-start;
         padding: 20px;
+    }
+
+    #database-books {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .tagline {
@@ -615,6 +646,10 @@ input:focus-visible {
         max-width: 180px;
         height: 235px;
     }
+
+    #database-books {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* 17. REDUCED MOTION */
@@ -630,4 +665,264 @@ input:focus-visible {
         transition: none !important;
         animation: none !important;
     }
+}
+
+/* 18. INSTAGRAM-STYLE BOOKMARK BUTTON */
+
+/* Keep the bookmark separate from the normal card buttons */
+
+
+/* Instagram-style bookmark */
+
+
+/* =========================================
+   18. INSTAGRAM-STYLE BOOKMARK BUTTON
+========================================= */
+
+.book-card button.save-button {
+    width: 36px;
+    height: 40px;
+    min-width: 36px;
+
+    margin: 0 0 10px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    color: var(--color-forest);
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.book-card button.save-button:hover {
+    background: transparent;
+    border: none;
+    color: var(--color-gold);
+    transform: scale(1.08);
+}
+
+.book-card button.save-button svg {
+    display: block;
+    width: 26px;
+    height: 30px;
+    pointer-events: none;
+}
+
+/* =========================================
+   19. MY LIBRARY PAGE
+========================================= */
+
+/* Main section */
+
+.my-library-page .my-library {
+    width: 100%;
+    max-width: 1650px;
+    min-height: 65vh;
+    margin: 0 auto;
+    padding: 55px 5%;
+}
+
+/* Heading */
+
+.my-library-page .my-library h2 {
+    margin: 0 0 8px;
+    color: var(--color-forest);
+    font-family: var(--font-heading);
+    font-size: 32px;
+}
+
+.my-library-page .my-library > p {
+    margin: 0 0 30px;
+    color: var(--color-text);
+    font-size: 15px;
+}
+
+/* Saved books grid */
+
+#my-library-books {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Book title */
+
+#my-library-books .book-card h3 {
+    margin: 0 0 10px;
+    color: var(--color-forest);
+    font-family: var(--font-heading);
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+/* Book details */
+
+#my-library-books .book-card p {
+    margin: 5px 0 14px;
+    font-size: 14px;
+}
+
+/* Read and Remove buttons */
+
+#my-library-books .book-card .read-button,
+#my-library-books .book-card .remove-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 8px;
+    padding: 10px 17px;
+    border: 1px solid var(--color-forest);
+    border-radius: 30px;
+    background: var(--color-forest);
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#my-library-books .book-card .read-button:hover,
+#my-library-books .book-card .remove-button:hover {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+/* Empty library message */
+
+#my-library-books #empty-library,
+#my-library-books > p {
+    grid-column: 1 / -1;
+    padding: 24px;
+    border: 1px dashed #CFC5B2;
+    border-radius: 12px;
+    color: var(--color-forest);
+    text-align: center;
+}
+
+#my-library-books > a {
+    color: var(--color-forest);
+    text-align: center;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+    #my-library-books {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .my-library-page .my-library {
+        padding: 35px 18px;
+    }
+
+    .my-library-page .my-library h2 {
+        font-size: 27px;
+    }
+
+    #my-library-books {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    #my-library-books .book-card {
+        padding: 14px;
+    }
+
+    #my-library-books .book-card h3 {
+        font-size: 16px;
+    }
+
+    #my-library-books .book-card p {
+        font-size: 12px;
+    }
+}
+
+/* Very small phones */
+
+@media (max-width: 380px) {
+    #my-library-books {
+        grid-template-columns: 1fr;
+    }
+
+    #my-library-books .book-card img {
+        max-width: 180px;
+        height: 235px;
+    }
+}
+/* Bookmark position on existing book cards
+.book-card {
+    position: relative;
+}
+
+.book-card .card-save-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-card);
+    color: var(--color-forest);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.book-card .card-save-button:hover {
+    background: var(--color-forest);
+    color: white;
+}
+.featured-books .book-card .card-save-button,
+.explore-library .book-card .card-save-button {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px;
+    padding: 5px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background: var(--color-card);
+    color: var(--color-forest);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+}
+
+.featured-books .book-card .card-save-button svg,
+.explore-library .book-card .card-save-button svg {
+    width: 22px;
+    height: 25px;
+} */
+
+/* Filled bookmark when a book is saved */
+
+.book-card button.save-button.saved {
+    color: var(--color-gold);
+}
+
+.book-card button.save-button.saved svg path {
+    fill: var(--color-gold);
+    stroke: var(--color-gold);
 }
